@@ -1,0 +1,40 @@
+.header {
+  width: 100%;
+  height: 7em;
+  background-color: #9b9b9b;
+  -webkit-box-shadow: 0px 0px 5px 0px #a6a4a6;
+          box-shadow: 0px 0px 5px 0px #a6a4a6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-container {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-container-logo {
+  height: 6em;
+}
+
+.header-container-logo:hover {
+  -webkit-animation: headShake;
+          animation: headShake;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.header-container-pokedex {
+  height: 6em;
+}
+/*# sourceMappingURL=header.css.map */

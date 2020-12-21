@@ -1,0 +1,246 @@
+.filter-opened
+    width: 65%
+    height: 23em
+    background: #757575
+    margin: 0 auto
+    border-bottom-left-radius: 40px
+    border-bottom-right-radius: 40px
+    box-shadow: 0px 0px 5px 0px #a6a4a4
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    transition-duration: 0.5s
+
+    .filter-stats
+        font-family: 'Lato', sans-serif
+        font-size: 18px
+        color: white
+        text-shadow: 0px 0px 3px #9c9c9c
+        height: 18em
+        &-name
+            display: flex
+            justify-content: flex-end
+            width: 50%
+            height: 2em
+            margin-top: 1em
+
+        &-type
+            display: flex
+
+            flex-direction: column
+            align-items: center
+
+            width: 50%
+            height: 5em
+            margin-top: 1em
+            .selector
+                width: 18.5em
+                height: 1.5em
+
+                border-radius: 7px
+                display: flex
+                justify-content: flex-end
+                align-items: center
+                &-btn
+                    width: 14em
+                    height: 1.5em
+                    position: absolute
+                    display: flex
+                    justify-content: flex-end
+                &-btn:hover
+                    background-color: #00000057
+
+                    transition-duration: 0.2s
+                    border-radius: 5px
+                &-text
+                    width: 20em
+                    margin: 0
+                    height: 1.5em
+                    border-radius: 5px
+                    background-color: #fff
+                    color: black
+                    text-align: center
+                    text-shadow: 0px 0px 3px #bbbbbb
+                &-text:hover
+                    background-color: #cfcfcf
+                &-btn-hidden
+                    color: black
+                    position: relative
+
+                    margin-right: 0.5em
+                &-btn-hidden::before
+                    position: absolute
+                    content: ''
+                    height: 0.8em
+                    width: 0.1em
+                    box-shadow: 0px 0px 3px #bbbbbb
+                    background-color: #464646
+                    transition-duration: 0.3s
+                    transform: translateX(-1.8em) rotate(30deg) translateY(0.3em)
+                &-btn-hidden::after
+                    position: absolute
+                    content: ''
+                    height: 0.8em
+                    width: 0.1em
+                    background-color: #464646
+                    transition-duration: 0.3s
+                    box-shadow: 0px 0px 3px #bbbbbb
+                    transform: translateX(-2.5em) rotate(150deg) translateY(-0.3em)
+                &-btn-opened::before
+                    position: absolute
+                    content: ''
+                    height: 0.8em
+                    width: 0.1em
+                    background-color: #464646
+                    transition-duration: 0.3s
+                    transform: translateX(-2.7em) rotate(150deg) translateY(-0.3em)
+                    box-shadow: 0px 0px 3px #bbbbbb
+                &-btn-opened::after
+                    position: absolute
+                    content: ''
+                    height: 0.8em
+                    width: 0.1em
+                    background-color: #464646
+                    // transform: translateY(-0.5em) rotate(140deg)
+                    transform: translateX(-2.8em) rotate(30deg) translateY(0.3em)
+                    transition-duration: 0.3s
+                    box-shadow: 0px 0px 3px #bbbbbb
+
+            .dropdown-opened
+
+                background-color: #ffffff
+                box-shadow: 0px 0px 5px 0px #a6a4a4
+                margin-top: 2em
+                border-radius: 5px
+                height: 15em
+                margin-left: 4.5em
+                width: 13em
+                transition-duration: 0.5s
+                position: absolute
+                overflow: scroll
+                overflow-y: auto
+                overflow-x: hidden
+                overflow-scrolling: touch
+
+                .dropdown-container
+                    display: flex
+                    justify-content: space-evenly
+                    margin: 0.25em 0
+                    color: black
+                    font-size: 14px
+                    text-transform: uppercase
+                    label
+                        margin: 0.5em 0 0 0.5em
+
+            .dropdown-opened::-webkit-scrollbar
+                width: 0.3em
+                -webkit-appearance: none
+
+            .dropdown-opened::-webkit-scrollbar-thumb
+                border-radius: 5px
+                background-color: rgba(0,0,0,0.5)
+                -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5)
+            .dropdown-hidden
+                transition-duration: 0.5s
+                .dropdown-container
+                    display: none
+
+        form
+            margin-top: 2em
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-wrap: wrap
+
+        &-main
+            width: 49%
+            display: flex
+            justify-content: space-between
+            margin-bottom: 0.5em
+
+        input
+            margin: 0 1em 0 1em
+            height: 1.5em
+            width: 8em
+            border-radius: 7px
+            border: none
+            text-decoration: none
+            text-align: center
+            font-family: 'Lato', sans-serif
+            font-size: 17px
+
+        input:focus
+            outline: none
+        label
+            width: 35%
+
+        .submit
+
+            margin-top: 2em
+            background-color: #cac7c7
+            border: none
+            border-radius: 10px
+            height: 3em
+            width: 15em
+            transition-duration: 0.2s
+            font-family: 'Lato', sans-serif
+            font-size: 14px
+            color: black
+            text-shadow: 0px 0px 3px #9c9c9c
+        button:focus
+            outline: none
+        button:hover
+            background-color: #a7a7a7
+            transition-duration: 0.2s
+    .filter-hide
+        border: none
+        width: 20em
+        height: 3em
+        margin: 0 auto
+        margin-bottom: -0.6em
+        background-color: #f36060
+        border-radius: 10px
+        color: white
+        text-shadow: 0px 0px 3px #4e4e4e
+
+    .filter-hide:focus
+        outline: none
+    .filter-hide:hover
+        background-color: #be4444
+        transition-duration: 0.2s
+
+.filter-hidden
+    width: 50%
+
+    height: 2em
+    background: #757575
+    margin: 0 auto
+    border-bottom-left-radius: 40px
+    border-bottom-right-radius: 40px
+    box-shadow: 0px 0px 5px 0px #a6a4a4
+    display: flex
+    align-items: center
+    flex-direction: column
+
+    justify-content: flex-end
+    transition-duration: 0.5s
+    .filter-stats
+        display: none
+
+    .filter-hide
+        border: none
+        position: absolute
+        width: 20em
+        height: 3em
+        margin: 0 auto
+        margin-bottom: -0.6em
+        text-shadow: 0px 0px 3px #4e4e4e
+        background-color: #df4e4e
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        color: white
+    .filter-hide:focus
+        outline: none
+    .filter-hide:hover
+        background-color: #be4444
+        transition-duration: 0.2s

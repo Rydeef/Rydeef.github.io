@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { Img } from "react-image"
 import errorImg from '../../img/400.png'
+import imgLoader from '../../img/imgLoader.gif'
 import './card.css'
 import Loader from './loader/loader.js'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -9,24 +11,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Card(props) {
     const [pokemon, setPokemon] = useState([])
     const objLength = Object.keys(props.filterObj).length
-    // useEffect(() => {
-    //     let arr = []
-    //     let obj = {}
-    //     let Obj = {}
 
-    //     for (const [key, value] of Object.entries(props.filterObj)) {
-
-    //         if (value !== '' && key !== 'name') {
-    //             obj[key] = value
-    //             Obj = [obj]
-    //             console.log(Obj);
-    //             props.setSome(...Obj)
-    //         }
-    //     }
-
-    //     console.log(props.some);
-
-    // }, [props?.filterObj])
 
     useEffect(() => {
         const { attack, hp, defense, specialAttack, specialDefense, speed } = props.filterObj
@@ -54,7 +39,7 @@ function Card(props) {
                 setPokemon(result.data.pokemons)
                 props.setLoading(false)
                 props.setPokeCount(result.data.count)
-                
+                props.setLoadingPager(false)
             })
             .catch(err => {
                 if (err.request) {
@@ -72,7 +57,24 @@ function Card(props) {
                         <Router>
                             {pokemon.map(obj => (
                                 <Link to={String(obj.id)} className="card" href="#" key={obj._id} onClick={function () { window.location.assign(`/${obj.id}`) }}>
-                                    <img src={`https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${obj.id}.png?raw=true`} className="card-img" onError={(e) => e.target.src = errorImg} key={obj.id} />
+                                    <Img
+                                        className="card-img"
+                                        key={obj.id}
+                                        src={`https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${obj.id}.png?raw=true`}
+                                        loader={
+                                            <img
+                                                className="card-img"
+                                                src={imgLoader}
+                                            />
+                                        }
+                                        unloader={
+                                            <img
+                                                className="card-img"
+                                                src={errorImg}
+                                            />
+                                        }
+                                    />
+
                                     <p className="card-title" key={obj.name}>{obj.name}</p>
                                 </Link>
                             ))}

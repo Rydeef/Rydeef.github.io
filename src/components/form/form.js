@@ -42,6 +42,8 @@ let FilterForm = (props) => {
     props.setLoading(true)
     props.setOpened(false)
     props.setIsErr(false)
+    props.setCurrentPage(0)
+    props.setLoadingPager(true)
 
     let arr = []
     if (formState) {

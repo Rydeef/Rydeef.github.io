@@ -13,18 +13,20 @@ function Pokedex() {
     const [types, setTypes] = useState([])
     const [typesArray, setTypesArray] = useState([])
     const [isErr, setIsErr] = useState(false)
-    const [some, setSome] = useState({})
+    const [loadingPager, setLoadingPager] = useState(true)
+  
     return (
         <div>
             <Header />
             <Filter
-                typesArray={typesArray} some={some} setSome={setSome} setTypesArray={setTypesArray} filterObj={filterObj} setFilterObj={setFilterObj} setLoading={setLoading} types={types} setTypes={setTypes} setIsErr={setIsErr}
+                setLoadingPager={setLoadingPager} setCurrentPage={setCurrentPage} typesArray={typesArray} setTypesArray={setTypesArray} filterObj={filterObj} setFilterObj={setFilterObj} setLoading={setLoading} types={types} setTypes={setTypes} setIsErr={setIsErr}
             />
             <Card
-                some={some} setSome={setSome} currentPage={currentPage} isErr={isErr} typesArray={typesArray} setTypesArray={setTypesArray} loading={loading} setLoading={setLoading} limit={limit} filterObj={filterObj} pokeCount={pokeCount} setPokeCount={setPokeCount} isErr={isErr} setIsErr={setIsErr}
+                setLoadingPager={setLoadingPager} currentPage={currentPage} isErr={isErr} typesArray={typesArray} setTypesArray={setTypesArray} loading={loading} setLoading={setLoading} limit={limit} filterObj={filterObj} pokeCount={pokeCount} setPokeCount={setPokeCount}  setIsErr={setIsErr}
             />
+
             <Pager
-                currentPage={currentPage} setLoading={setLoading} setCurrentPage={setCurrentPage} limit={limit} setLimit={setLimit} pokeCount={pokeCount} isErr={isErr}
+                loadingPager={loadingPager} currentPage={currentPage} loading={loading} setLoading={setLoading} setCurrentPage={setCurrentPage} limit={limit} setLimit={setLimit} pokeCount={pokeCount} isErr={isErr}
             />
         </div>
     )

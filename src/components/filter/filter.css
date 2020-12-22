@@ -74,11 +74,12 @@
 
 .filter-opened .filter-stats-type .selector-btn {
   width: 14em;
-  height: 1.5em;
+  height: 1.6em;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -98,7 +99,15 @@
   border-radius: 5px;
   background-color: #fff;
   color: black;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-shadow: 0px 0px 3px #bbbbbb;
 }
 
@@ -122,8 +131,8 @@
   background-color: #464646;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
-  -webkit-transform: translateX(-1.8em) rotate(30deg) translateY(0.3em);
-          transform: translateX(-1.8em) rotate(30deg) translateY(0.3em);
+  -webkit-transform: translateX(-1.6em) rotate(30deg) translateY(0.6em);
+          transform: translateX(-1.6em) rotate(30deg) translateY(0.6em);
 }
 
 .filter-opened .filter-stats-type .selector-btn-hidden::after {
@@ -136,8 +145,8 @@
           transition-duration: 0.3s;
   -webkit-box-shadow: 0px 0px 3px #bbbbbb;
           box-shadow: 0px 0px 3px #bbbbbb;
-  -webkit-transform: translateX(-2.5em) rotate(150deg) translateY(-0.3em);
-          transform: translateX(-2.5em) rotate(150deg) translateY(-0.3em);
+  -webkit-transform: translateX(-2.6em) rotate(150deg) translateY(-0.6em);
+          transform: translateX(-2.6em) rotate(150deg) translateY(-0.6em);
 }
 
 .filter-opened .filter-stats-type .selector-btn-opened::before {
@@ -148,8 +157,8 @@
   background-color: #464646;
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
-  -webkit-transform: translateX(-2.7em) rotate(150deg) translateY(-0.3em);
-          transform: translateX(-2.7em) rotate(150deg) translateY(-0.3em);
+  -webkit-transform: translateX(-2.6em) rotate(150deg) translateY(-0.6em);
+          transform: translateX(-2.6em) rotate(150deg) translateY(-0.6em);
   -webkit-box-shadow: 0px 0px 3px #bbbbbb;
           box-shadow: 0px 0px 3px #bbbbbb;
 }
@@ -160,8 +169,8 @@
   height: 0.8em;
   width: 0.1em;
   background-color: #464646;
-  -webkit-transform: translateX(-2.8em) rotate(30deg) translateY(0.3em);
-          transform: translateX(-2.8em) rotate(30deg) translateY(0.3em);
+  -webkit-transform: translateX(-2.4em) rotate(30deg) translateY(0.6em);
+          transform: translateX(-2.4em) rotate(30deg) translateY(0.6em);
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   -webkit-box-shadow: 0px 0px 3px #bbbbbb;

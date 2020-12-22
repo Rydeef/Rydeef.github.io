@@ -1,17 +1,18 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+
 import { Img } from "react-image"
 import errorImg from '../../img/400.png'
 import imgLoader from '../../img/imgLoader.gif'
 import './card.css'
 import Loader from './loader/loader.js'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
 
 
 function Card(props) {
     const [pokemon, setPokemon] = useState([])
     const objLength = Object.keys(props.filterObj).length
-
+    const history = useHistory()
 
     useEffect(() => {
         const { attack, hp, defense, specialAttack, specialDefense, speed } = props.filterObj
@@ -47,16 +48,16 @@ function Card(props) {
                 }
             })
     }, [props.currentPage, props.limit, props.filterObj])
-
+  
 
     if (!props.isErr) {
         return (
             <div>
                 {props.loading ? (<Loader />) : (
                     <div className='cardbox'>
-                        <Router>
+                        <Router >
                             {pokemon.map(obj => (
-                                <Link to={String(obj.id)} className="card" href="#" key={obj._id} onClick={function () { window.location.assign(`/${obj.id}`) }}>
+                                <Link to={String(obj.id)} className="card" href="#" key={obj._id} onClick={() => history.push(`/${obj.id}`)}>
                                     <Img
                                         className="card-img"
                                         key={obj.id}
@@ -78,7 +79,7 @@ function Card(props) {
                                     <p className="card-title" key={obj.name}>{obj.name}</p>
                                 </Link>
                             ))}
-
+                            
                         </Router>
                     </div>
                 )}

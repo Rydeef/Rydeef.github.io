@@ -1,16 +1,17 @@
 import React from 'react'
+import {useHistory, BrowserRouter as Router, Link} from 'react-router-dom'
 import './header.css'
 import logo from '../../img/logo.png'
 import pokedex from '../../img/pokedex.png'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 function Header() {
-
+    const history = useHistory()
     return (
         <header className="header">
             <div className="header-container">
                 <Router>
-                    <Link to="/" href="" onClick={function () { window.location.assign('/') }}>
+                    <Link to="/" href="" onClick={() => history.push('/')}>
                         <img src={logo} alt="" className="header-container-logo" />
                     </Link>
                 </Router>

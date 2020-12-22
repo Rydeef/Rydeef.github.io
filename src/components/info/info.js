@@ -4,8 +4,6 @@ import axios from 'axios'
 import './info.css'
 import Loader from '.././card/loader/loader.js'
 function Info(props) {
-
-
     const [pokemon, setPokemon] = useState([])
     const [pokeStat, setPokeStat] = useState([])
     const pokePage = window.location.pathname.replace(/\D/g, '')

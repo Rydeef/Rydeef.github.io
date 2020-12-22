@@ -25,7 +25,6 @@ function Pager(props) {
                     <div className='container'>
                         <ReactPaginate
                             initialPage={0}
-
                             pageCount={props.pokeCount / props.limit}
                             marginPagesDisplayed={1.2}
                             pageRangeDisplayed={3}
@@ -38,7 +37,6 @@ function Pager(props) {
                             breakClassName='pagination-page'
                             breakLinkClassName='pagination-link'
                             onPageChange={handlePageClick}
-
                         />
                         <LimitForm setLoading={props.setLoading} setLimit={props.setLimit} limit={props.limit} pokeCount={props.pokeCount} />
                     </div>)

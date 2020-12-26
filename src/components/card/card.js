@@ -6,7 +6,7 @@ import errorImg from '../../img/400.png'
 import imgLoader from '../../img/imgLoader.gif'
 import './card.css'
 import Loader from './loader/loader.js'
-import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
+import { useHistory, HashRouter as Router, Link } from "react-router-dom";
 
 
 function Card(props) {

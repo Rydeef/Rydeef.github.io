@@ -1,5 +1,5 @@
 import React from 'react'
-import {useHistory, BrowserRouter as Router, Link} from 'react-router-dom'
+import {useHistory, HashRouter as Router, Link} from 'react-router-dom'
 import './header.css'
 import logo from '../../img/logo.png'
 import pokedex from '../../img/pokedex.png'

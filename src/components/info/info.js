@@ -6,7 +6,8 @@ import Loader from '.././card/loader/loader.js'
 function Info(props) {
     const [pokemon, setPokemon] = useState([])
     const [pokeStat, setPokeStat] = useState([])
-    const pokePage = window.location.pathname.replace(/\D/g, '')
+    const pokePage =window.location.hash.replace(/\D[/]/, '')  
+    console.log(window.location.hash.replace(/\D[/]/, '')  );
 
     useEffect(() => {
         axios.get(`https://pokemonapishort.herokuapp.com/PokeApi/getStatOf/${pokePage}`)
